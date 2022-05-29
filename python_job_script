@@ -24,6 +24,8 @@ module purge
 module load python/GEOSpyD/Min4.9.2_py3.9
 #module load python/GEOSpyD/Ana2019.10_py3.7
 
+#touch results.csv
+
 
 echo '-------------------------'
 echo 'Copy Matrix'
@@ -40,12 +42,12 @@ python3 test_look_and_say.py 45
 python3 test_look_and_say.py 48
 
 echo '-------------------------'
-echo ‘Count Unique Words in File
+echo ‘Count Unique Words in File'
 echo '-------------------------'
-python3 test_count_unique_words.py ../Data/bible.txt
-python3 test_count_unique_words.py ../Data/book1.txt
-python3 test_count_unique_words.py ../Data/plrabn12.txt
-python3 test_count_unique_words.py ../Data/world192.txt
+python3 test_count_unique_words.py ./Data/bible.txt
+python3 test_count_unique_words.py ./Data/book1.txt
+python3 test_count_unique_words.py ./Data/plrabn12.txt
+python3 test_count_unique_words.py ./Data/world192.txt
 
 echo '-------------------------'
 echo 'Fibonacci Sequence'

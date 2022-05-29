@@ -78,6 +78,7 @@ def bench_time(number_repeats=1):
     
             if number_repeats < 2:
                min_time, max_time, avg_time = get_statistics(recorded_times)
+               # Insert avg_time in opened csv
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \
                      --<> Min Time: {2:11.4f}s \n \
