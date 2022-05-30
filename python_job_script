@@ -42,7 +42,7 @@ python3 test_look_and_say.py 45
 python3 test_look_and_say.py 48
 
 echo '-------------------------'
-echo ‘Count Unique Words in File'
+echo 'Count Unique Words in File'
 echo '-------------------------'
 python3 test_count_unique_words.py ./Data/bible.txt
 python3 test_count_unique_words.py ./Data/book1.txt
