@@ -31,6 +31,7 @@
 from __future__ import print_function
 
 import datetime as dt
+import csv
 
 def get_statistics(my_list):
     """
@@ -86,6 +87,12 @@ def bench_time(number_repeats=1):
                      --<> Avg Time: {4:11.4f}s".format(function_to_time.__name__, number_repeats, min_time, max_time, avg_time)) 
             else:
                min_time, max_time, avg_time, std_time = get_statistics(recorded_times)
+
+               with open ('./results.csv', 'a+') as file:
+                    writer = csv.writer(file)
+                    data = [function_to_time.__name__, avg_time, std_time]
+                    writer.writerow(data)
+
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \
                      --<> Min Time: {2:11.4f}s \n \
@@ -137,6 +144,12 @@ def bench_time_recursive(number_repeats=1):
                      --<> Avg Time: {4:11.4f}s".format(function_to_time.__name__, number_repeats, min_time, max_time, avg_time)) 
             else:
                min_time, max_time, avg_time, std_time = get_statistics(recorded_times)
+
+               with open ('./results.csv', 'a+') as file:
+                    writer = csv.writer(file)
+                    data = [function_to_time.__name__, avg_time, std_time]
+                    writer.writerow(data) 
+
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \
                      --<> Min Time: {2:11.4f}s \n \

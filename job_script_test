@@ -24,7 +24,11 @@ module purge
 module load python/GEOSpyD/Min4.9.2_py3.9
 #module load python/GEOSpyD/Ana2019.10_py3.7
 
-#touch results.csv
+echo '-------------------------'
+echo 'Setting ouput file'
+echo '-------------------------'
+touch results.csv
+python3 create_file_header.py
 
 echo '-------------------------'
 echo 'Look and say sequence'
