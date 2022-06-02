@@ -50,7 +50,7 @@ def loop_solver(n):
         Find the desired numerical solution using loops
     """
 
-    j = np.complex(0, 1)
+    j = complex(0, 1)
     pi_c = np.pi
 
     # Set the initial condition
@@ -93,7 +93,7 @@ def vectorized_solver(n):
     """
         Find the desired numerical solution using vectorization
     """
-    j = np.complex(0, 1)
+    j = complex(0, 1)
     pi_c = np.pi
 
     # Set the initial condition

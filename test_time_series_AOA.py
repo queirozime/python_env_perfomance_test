@@ -21,8 +21,8 @@ def serial_time_series_processing():
     """
     variable_name = 'aoa'
     beginning_year = 1990
-    end_year = 2009
-    #end_year = 1990
+    #end_year = 2009
+    end_year = 1990
 
     first_file = 0
     reference_latitude = -86.0
@@ -31,7 +31,7 @@ def serial_time_series_processing():
 
     coefficient = 365.5
 
-    reference_directory = '../Data/'
+    reference_directory = './Data/'
 
     # Loop over the years
     for year in range(beginning_year, end_year+1):
