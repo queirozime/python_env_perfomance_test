@@ -9,7 +9,7 @@ import benchmark_decorator as dectimer
 #-----------------------------
 # Function: evaluate_functions
 #-----------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def evaluate_functions(n):
     """
         Evaluate the trigononmetric functions for n values evenly

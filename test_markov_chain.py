@@ -18,7 +18,7 @@ def f(x):
 #--------------------------------
 # Function: markov_chain_function
 #--------------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def markov_chain_function(n):
     """
         Operate the Markov chain n times

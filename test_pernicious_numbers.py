@@ -36,7 +36,7 @@ def get_number_of_ones(n):
     return bin(n).count("1")
 
 
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def find_pernicious_numbers(n):
     """
        Find the nth pernicious number.

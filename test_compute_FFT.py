@@ -8,7 +8,7 @@ import sys
 import benchmark_decorator as dectimer
 
 
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def compute_FFT(n):
     """
         Compute the FFT of an n-by-n matrix of data

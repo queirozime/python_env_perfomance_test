@@ -22,7 +22,7 @@ def serial_time_series_processing():
     variable_name = 'aoa'
     beginning_year = 1990
     #end_year = 2009
-    end_year = 1990
+    end_year = 1991
 
     first_file = 0
     reference_latitude = -86.0

@@ -44,7 +44,7 @@ def loop_time_step(u):
 #----------------------
 # Function: loop_solver
 #----------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def loop_solver(n):
     """
         Find the desired numerical solution using loops
@@ -88,7 +88,7 @@ def vector_time_step(u):
 #----------------------------
 # Function: vectorized_solver
 #----------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def vectorized_solver(n):
     """
         Find the desired numerical solution using vectorization

@@ -8,7 +8,7 @@ import benchmark_decorator as dectimer
 #------------------------------
 # Function: iterative_fibonacci
 #------------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def iterative_fibonacci(n):
     """
       Find the Fibonacci number of order n by iteration
@@ -25,7 +25,7 @@ def iterative_fibonacci(n):
 #------------------------------
 # Function: recursive_fibonacci
 #------------------------------
-@dectimer.bench_time_recursive(3)
+@dectimer.bench_time_recursive(3, sys.argv[1])
 def recursive_fibonacci(n):
     """
       Find the Fibonacci number of order n by recursion

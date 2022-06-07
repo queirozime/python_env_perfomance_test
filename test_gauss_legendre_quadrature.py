@@ -14,7 +14,7 @@ integrand = lambda x: np.exp(x)
 #-----------------------------
 # Function: compute_quadrature
 #-----------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def compute_quadrature(n):
     """
       Perform the Gauss-Legendre Quadrature at the prescribed order n

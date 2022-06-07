@@ -51,7 +51,7 @@ def get_statistics(my_list):
 #---------------------
 # Function: bench_time
 #---------------------
-def bench_time(number_repeats=1):
+def bench_time(number_repeats=1, instance=''):
     """
       Decorator function to determine the elapsed time.
     """
@@ -90,7 +90,8 @@ def bench_time(number_repeats=1):
 
                with open ('./results.csv', 'a+') as file:
                     writer = csv.writer(file)
-                    data = [function_to_time.__name__, avg_time, std_time]
+                    fileName = function_to_time.__name__ + '_' + str(instance)
+                    data = [fileName, avg_time, min_time, max_time, std_time]
                     writer.writerow(data)
 
                print("{0:<}: \n \
@@ -147,8 +148,9 @@ def bench_time_recursive(number_repeats=1):
 
                with open ('./results.csv', 'a+') as file:
                     writer = csv.writer(file)
-                    data = [function_to_time.__name__, avg_time, std_time]
-                    writer.writerow(data) 
+                    fileName = function_to_time.__name__ + '_' + str(instance)
+                    data = [fileName, avg_time, min_time, max_time, std_time]
+                    writer.writerow(data)
 
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \

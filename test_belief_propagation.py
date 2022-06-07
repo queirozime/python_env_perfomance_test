@@ -5,7 +5,7 @@ import numpy as np
 import sys
 import benchmark_decorator as dectimer
 
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def belief_propagation(N):
     """
         Run the belief propagation algorithm N times

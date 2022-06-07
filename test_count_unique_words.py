@@ -21,7 +21,7 @@ def strip_word(word):
 #---------------------------------
 # Function: count_words_dictionary
 #---------------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def count_words_dictionary(file_name):
     """
         Find unique words using a dictionary
@@ -35,7 +35,7 @@ def count_words_dictionary(file_name):
 #--------------------------
 # Function: count_words_set
 #--------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def count_words_set(file_name):
     """
         Find unique words using a set

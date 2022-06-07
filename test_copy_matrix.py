@@ -7,7 +7,7 @@ import sys
 import benchmark_decorator as dectimer
 
 
-@dectimer.bench_time(3)
+@dectimer.bench_time(3,sys.argv[1])
 def serial_copy(A):
     """
         Perform copies of elements in matrix A iteratively
@@ -20,7 +20,7 @@ def serial_copy(A):
             A[i, j, 1] = A[i, j, 2]
 
 
-@dectimer.bench_time(3)
+@dectimer.bench_time(3, sys.argv[1])
 def vector_copy(A):
     """
         Perform copies of of elements in matrix A
