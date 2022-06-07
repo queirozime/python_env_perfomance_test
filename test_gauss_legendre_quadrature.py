@@ -14,7 +14,11 @@ integrand = lambda x: np.exp(x)
 #-----------------------------
 # Function: compute_quadrature
 #-----------------------------
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def compute_quadrature(n):
     """
       Perform the Gauss-Legendre Quadrature at the prescribed order n

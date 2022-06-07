@@ -9,7 +9,12 @@ import benchmark_decorator as dectimer
 #--------------------------------
 # Function: matrix_multiplication
 #--------------------------------
-@dectimer.bench_time(3, sys.argv[1])
+
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def matrix_multiplication(A, B):
     """
         Evaluate the dot product of matrices A and B using numpy

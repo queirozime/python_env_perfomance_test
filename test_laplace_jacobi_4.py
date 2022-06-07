@@ -88,7 +88,11 @@ def vector_time_step(u):
 #----------------------------
 # Function: vectorized_solver
 #----------------------------
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def vectorized_solver(n):
     """
         Find the desired numerical solution using vectorization

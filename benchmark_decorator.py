@@ -51,7 +51,7 @@ def get_statistics(my_list):
 #---------------------
 # Function: bench_time
 #---------------------
-def bench_time(number_repeats=1, instance=''):
+def bench_time(number_repeats=1, instance='', environment='host'):
     """
       Decorator function to determine the elapsed time.
     """
@@ -88,11 +88,26 @@ def bench_time(number_repeats=1, instance=''):
             else:
                min_time, max_time, avg_time, std_time = get_statistics(recorded_times)
 
-               with open ('./results.csv', 'a+') as file:
-                    writer = csv.writer(file)
-                    fileName = function_to_time.__name__ + '_' + str(instance)
-                    data = [fileName, avg_time, min_time, max_time, std_time]
-                    writer.writerow(data)
+               if environment == 'host':
+                    with open ('./results-host-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               elif environment == 'docker': 
+                   with open ('./results-docker-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               elif environment == 'VM':
+                   with open ('./results-VM-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               
+
 
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \
@@ -108,7 +123,7 @@ def bench_time(number_repeats=1, instance=''):
 # Function: bench_time_recursive
 #-------------------------------
 
-def bench_time_recursive(number_repeats=1):
+def bench_time_recursive(number_repeats=1, instance='', environment='host'):
     """
       Decorator function to determine the elapsed time
       of recursive functions.
@@ -146,11 +161,25 @@ def bench_time_recursive(number_repeats=1):
             else:
                min_time, max_time, avg_time, std_time = get_statistics(recorded_times)
 
-               with open ('./results.csv', 'a+') as file:
-                    writer = csv.writer(file)
-                    fileName = function_to_time.__name__ + '_' + str(instance)
-                    data = [fileName, avg_time, min_time, max_time, std_time]
-                    writer.writerow(data)
+               if environment == 'host':
+                    with open ('./results-host-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               elif environment == 'docker': 
+                   with open ('./results-docker-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               elif environment == 'VM':
+                   with open ('./results-VM-python.csv', 'a+') as file:
+                        writer = csv.writer(file)
+                        fileName = function_to_time.__name__ + '_' + str(instance)
+                        data = [fileName, avg_time, min_time, max_time, std_time]
+                        writer.writerow(data)
+               
 
                print("{0:<}: \n \
                      --<>  Repeats: {1:11d} \n \

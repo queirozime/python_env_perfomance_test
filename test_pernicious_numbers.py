@@ -35,8 +35,11 @@ def get_number_of_ones(n):
     """
     return bin(n).count("1")
 
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
 
-@dectimer.bench_time(3, sys.argv[1])
+@dectimer.bench_time(3, sys.argv[1], environment)
 def find_pernicious_numbers(n):
     """
        Find the nth pernicious number.

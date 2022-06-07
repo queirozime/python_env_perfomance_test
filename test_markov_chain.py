@@ -18,7 +18,12 @@ def f(x):
 #--------------------------------
 # Function: markov_chain_function
 #--------------------------------
-@dectimer.bench_time(3, sys.argv[1])
+
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def markov_chain_function(n):
     """
         Operate the Markov chain n times

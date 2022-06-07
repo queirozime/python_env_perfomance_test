@@ -24,9 +24,11 @@ module purge
 module load python/GEOSpyD/Min4.9.2_py3.9
 #module load python/GEOSpyD/Ana2019.10_py3.7
 
+start=$(date +%s%N)
+
 echo '-------------------------'
 echo 'Setting ouput file'
-touch results.csv
+touch results-host-python.csv
 python3 create_file_header.py
 
 echo 'All set!'
@@ -36,7 +38,7 @@ echo '-------------------------'
 echo '-------------------------'
 echo 'Copy Matrix'
 echo '-------------------------'
-python3 test_copy_matrix.py 5000
+python3 test_copy_matrix.py 500
 
 echo '-------------------------'
 echo 'Look and say sequence'
@@ -105,7 +107,13 @@ python3 test_pernicious_numbers.py 100000
 echo '-------------------------'
 echo 'Processing a collection of files'
 echo '-------------------------'
-time python3 test_time_series_AOA.py
+python3 ./Data/create_nc4Files.py
+
+python3 test_time_series_AOA.py
+
+end=$(date +%s%N)
+echo "Elapsed Time $(($(($end-$start))/1000000)) ms"
+
 # time python3 test_time_series_AOA_multiproc.py 1
 # time python3 test_time_series_AOA_multiproc.py 2
 # time python3 test_time_series_AOA_multiproc.py 4

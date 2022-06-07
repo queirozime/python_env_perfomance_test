@@ -3,6 +3,7 @@
 from __future__ import print_function
 
 import benchmark_decorator as dectimer
+import sys
 
 #---------------------------
 # Function: raised_to_string
@@ -40,7 +41,12 @@ def is_munchausen_number(i):
 #----------------------------------
 # Function: find_munchausen_numbers
 #----------------------------------
-@dectimer.bench_time(3)
+
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3,0, environment)
 def find_munchausen_numbers():
     """
         Find the 4 Munchausen numbers
@@ -60,7 +66,7 @@ def find_munchausen_numbers():
 #--------------------------------------
 # Function: find_munchausen_numbers_map
 #--------------------------------------
-@dectimer.bench_time(3)
+@dectimer.bench_time(3,0, environment)
 def find_munchausen_numbers_map():
     """
         Find the 4 Munchausen numbers using map()

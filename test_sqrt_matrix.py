@@ -10,7 +10,12 @@ import benchmark_decorator as dectimer
 #----------------------
 # Function: sqrt_matrix
 #----------------------
-@dectimer.bench_time(3, sys.argv[1])
+
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def sqrt_matrix(A):
     """
         Take the square root of matrix A

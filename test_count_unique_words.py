@@ -21,7 +21,10 @@ def strip_word(word):
 #---------------------------------
 # Function: count_words_dictionary
 #---------------------------------
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+@dectimer.bench_time(3, sys.argv[1].split('/')[2], environment)
 def count_words_dictionary(file_name):
     """
         Find unique words using a dictionary
@@ -35,7 +38,7 @@ def count_words_dictionary(file_name):
 #--------------------------
 # Function: count_words_set
 #--------------------------
-@dectimer.bench_time(3, sys.argv[1])
+@dectimer.bench_time(3, sys.argv[1].split('/')[2], environment)
 def count_words_set(file_name):
     """
         Find unique words using a set

@@ -8,7 +8,11 @@ import benchmark_decorator as dectimer
 #--------------------------------
 # Function: look_and_say_sequence
 #--------------------------------
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, sys.argv[1], environment)
 def look_and_say_sequence(starting_sequence, n):
     """
       Construct the look and say sequence of order n and starting 

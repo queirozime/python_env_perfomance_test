@@ -7,8 +7,10 @@ import numpy.random as rn
 import sys
 import benchmark_decorator as dectimer
 
-
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+@dectimer.bench_time(3, sys.argv[1], environment)
 def compute_FFT(n):
     """
         Compute the FFT of an n-by-n matrix of data

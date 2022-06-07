@@ -5,7 +5,10 @@ import numpy as np
 import sys
 import benchmark_decorator as dectimer
 
-@dectimer.bench_time(3, sys.argv[1])
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+@dectimer.bench_time(3, sys.argv[1], environment)
 def belief_propagation(N):
     """
         Run the belief propagation algorithm N times

@@ -27,8 +27,8 @@ start=$(date +%s%N)
 
 echo '-------------------------'
 echo 'Setting ouput file'
-touch results-host-python.csv
-python3 create_file_header.py 
+touch results-VM-python.csv
+python3 create_file_header.py VM
 
 echo 'All set!'
 echo '-------------------------'
@@ -37,96 +37,71 @@ echo '-------------------------'
 echo '-------------------------'
 echo 'Copy Matrix'
 echo '-------------------------'
-python3 test_copy_matrix.py 5000
-python3 test_copy_matrix.py 7000
-python3 test_copy_matrix.py 9000
+python3 test_copy_matrix.py 500 VM
 
 echo '-------------------------'
 echo 'Look and say sequence'
 echo '-------------------------'
-python3 test_look_and_say.py 40
-python3 test_look_and_say.py 45
-python3 test_look_and_say.py 48
+python3 test_look_and_say.py 40 VM
 
 echo '-------------------------'
 echo 'Count Unique Words in File'
 echo '-------------------------'
-python3 test_count_unique_words.py ./Data/bible.txt
-python3 test_count_unique_words.py ./Data/book1.txt
-python3 test_count_unique_words.py ./Data/plrabn12.txt
-python3 test_count_unique_words.py ./Data/world192.txt
+python3 test_count_unique_words.py ./Data/bible.txt VM
 
 echo '-------------------------'
 echo 'Fibonacci Sequence'
 echo '-------------------------'
-python3 test_fibonacci.py 25
-python3 test_fibonacci.py 35
-python3 test_fibonacci.py 45
+python3 test_fibonacci.py 25 VM
 
 echo '-------------------------'
 echo 'Matrix Multiplication'
 echo '-------------------------'
-python3 test_matrix_multiplication.py 1500
-python3 test_matrix_multiplication.py 1750
-python3 test_matrix_multiplication.py 2000
+python3 test_matrix_multiplication.py 1500 VM
 
 echo '-------------------------'
 echo 'Belief Propagation'
 echo '-------------------------'
-python3 test_belief_propagation.py 250
-python3 test_belief_propagation.py 500
-python3 test_belief_propagation.py 1000
+python3 test_belief_propagation.py 250 VM
 
 echo '-------------------------'
 echo 'Markov Chain'
 echo '-------------------------'
-python3 test_markov_chain.py 5000
-python3 test_markov_chain.py 10000
-python3 test_markov_chain.py 15000
+python3 test_markov_chain.py 5000 VM
 
 echo '-------------------------'
 echo 'Compute FFT'
 echo '-------------------------'
-python3 test_compute_FFT.py 10000
-python3 test_compute_FFT.py 15000
-python3 test_compute_FFT.py 20000
+python3 test_compute_FFT.py 10000 VM
 
 echo '-------------------------'
 echo 'Jacobi Iterative solver'
 echo '-------------------------'
-python3 test_laplace_jacobi_4.py 100
-python3 test_laplace_jacobi_4.py 150
-python3 test_laplace_jacobi_4.py 200
+python3 test_laplace_jacobi_4.py 100 VM
 
 echo '-------------------------'
 echo 'Compute square root of a matrix'
 echo '-------------------------'
-python3 test_sqrt_matrix.py 1000
-python3 test_sqrt_matrix.py 2000
-python3 test_sqrt_matrix.py 4000
+python3 test_sqrt_matrix.py 1000 VM
 
 echo 'Gauss Legendre quadrature'
 echo '-------------------------'
-python3 test_gauss_legendre_quadrature.py 50
-python3 test_gauss_legendre_quadrature.py 75
-python3 test_gauss_legendre_quadrature.py 100
+python3 test_gauss_legendre_quadrature.py 50 VM
 
 echo '-------------------------'
 echo 'Evaluation of functions'
 echo '-------------------------'
-python3 test_evaluate_functions.py  80000
-python3 test_evaluate_functions.py  90000
-python3 test_evaluate_functions.py 100000
+python3 test_evaluate_functions.py  80000 VM
 
 echo '-------------------------'
 echo 'Compute Munchausen Numbers'
 echo '-------------------------'
-python3 test_munchausen_number.py
+python3 test_munchausen_number.py VM
 
 echo '-------------------------'
 echo 'Compute Pernicious Numbers'
 echo '-------------------------'
-python3 test_pernicious_numbers.py 100000
+python3 test_pernicious_numbers.py 100000 VM
 
 echo '-------------------------'
 echo 'Processing a collection of files'
@@ -136,12 +111,12 @@ python3 ./Data/create_nc4Files.py
 python3 test_time_series_AOA.py
 end=$(date +%s%N)
 echo "Elapsed Time $(($(($end-$start))/1000000)) ms"
-#time python test_time_series_AOA_multiproc.py 1
-#time python test_time_series_AOA_multiproc.py 2
-#time python test_time_series_AOA_multiproc.py 4
-#time python test_time_series_AOA_multiproc.py 8
-#time python test_time_series_AOA_multiproc.py 16
-#time python test_time_series_AOA_multiproc.py 24
-##time python test_time_series_AOA_multiproc.py 28
+# time python3 test_time_series_AOA_multiproc.py 1
+# time python3 test_time_series_AOA_multiproc.py 2
+# time python3 test_time_series_AOA_multiproc.py 4
+# time python3 test_time_series_AOA_multiproc.py 8
+# time python3 test_time_series_AOA_multiproc.py 16
+# time python3 test_time_series_AOA_multiproc.py 24
+# time python3 test_time_series_AOA_multiproc.py 28
 
 

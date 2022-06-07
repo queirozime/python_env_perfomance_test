@@ -56,7 +56,7 @@ def parallel_time_series_processing(num_threads):
     num_days = 0
     my_list = []
 
-    reference_directory = '../Data/'
+    reference_directory = './Data/'
 
     # Loop over the years
     for year in range(beginning_year, end_year+1):

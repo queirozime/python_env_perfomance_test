@@ -10,11 +10,17 @@ from netCDF4 import Dataset
 import numpy as np
 import glob
 import benchmark_decorator as dectimer
+import sys
 
 #----------------------------------------
 # Function: serial_time_series_processing
 #----------------------------------------
-@dectimer.bench_time(3)
+
+if(len(sys.argv) < 3): 
+    environment = 'host'
+else: environment = sys.argv[2]
+
+@dectimer.bench_time(3, 0, environment)
 def serial_time_series_processing():
     """
       Do serial time series processing on a collection of files
