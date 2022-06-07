@@ -102,10 +102,10 @@ echo 'Compute Pernicious Numbers'
 echo '-------------------------'
 python3 test_pernicious_numbers.py 100000
 
-# echo '-------------------------'
-# echo 'Processing a collection of files'
-# echo '-------------------------'
-# time python3 test_time_series_AOA.py
+echo '-------------------------'
+echo 'Processing a collection of files'
+echo '-------------------------'
+time python3 test_time_series_AOA.py
 # time python3 test_time_series_AOA_multiproc.py 1
 # time python3 test_time_series_AOA_multiproc.py 2
 # time python3 test_time_series_AOA_multiproc.py 4
