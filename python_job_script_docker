@@ -87,9 +87,9 @@ python3 test_markov_chain.py 15000 docker
 echo '-------------------------'
 echo 'Compute FFT'
 echo '-------------------------'
-python3 test_compute_FFT.py 10000 docker
-python3 test_compute_FFT.py 15000 docker
-python3 test_compute_FFT.py 20000 docker
+python3 test_compute_FFT.py 1000 docker
+python3 test_compute_FFT.py 3000 docker
+python3 test_compute_FFT.py 5000 docker
 
 echo '-------------------------'
 echo 'Jacobi Iterative solver'
