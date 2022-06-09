@@ -136,6 +136,7 @@ python3 ./Data/create_nc4Files.py
 python3 test_time_series_AOA.py
 end=$(date +%s%N)
 echo "Elapsed Time $(($(($end-$start))/1000000)) ms"
+python3 writeTime.py "${start}" "${end}"
 #time python test_time_series_AOA_multiproc.py 1
 #time python test_time_series_AOA_multiproc.py 2
 #time python test_time_series_AOA_multiproc.py 4
