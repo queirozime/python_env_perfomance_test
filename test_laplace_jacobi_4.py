@@ -44,7 +44,7 @@ def loop_time_step(u):
 #----------------------
 # Function: loop_solver
 #----------------------
-@dectimer.bench_time(3, sys.argv[1])
+@dectimer.bench_time(3, sys.argv[1], environment)
 def loop_solver(n):
     """
         Find the desired numerical solution using loops

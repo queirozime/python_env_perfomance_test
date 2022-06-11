@@ -121,7 +121,7 @@ python3 test_evaluate_functions.py 100000 VM
 echo '-------------------------'
 echo 'Compute Munchausen Numbers'
 echo '-------------------------'
-python3 test_munchausen_number.py VM
+python3 test_munchausen_number.py 0 VM
 
 echo '-------------------------'
 echo 'Compute Pernicious Numbers'
@@ -133,7 +133,7 @@ echo 'Processing a collection of files'
 echo '-------------------------'
 python3 ./Data/create_nc4Files.py
 
-python3 test_time_series_AOA.py VM
+python3 test_time_series_AOA.py 0 VM
 end=$(date +%s%N)
 echo "Elapsed Time $(($(($end-$start))/1000000)) ms"
 python3 writeTime.py "${start}" "${end}"
